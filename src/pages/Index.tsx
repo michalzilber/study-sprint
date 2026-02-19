@@ -1,15 +1,9 @@
-import { useAuth } from '@/contexts/AuthContext';
-import { Navigate } from 'react-router-dom';
 import { Zap, Target, Timer, BarChart3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
-  const { user, loading } = useAuth();
   const navigate = useNavigate();
-
-  if (loading) return null;
-  if (user) return <Navigate to="/dashboard" replace />;
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -20,8 +14,8 @@ const Index = () => {
           </div>
           <span className="text-xl font-bold text-foreground">StudySprint</span>
         </div>
-        <Button onClick={() => navigate('/auth')} variant="secondary" size="sm">
-          Sign In
+        <Button onClick={() => navigate('/dashboard')} variant="secondary" size="sm">
+          Go to Dashboard
         </Button>
       </header>
 
@@ -35,8 +29,8 @@ const Index = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Manage tasks, track focus sessions, and crush your study goals with a built-in Pomodoro timer.
             </p>
-            <Button onClick={() => navigate('/auth')} size="lg" className="gradient-primary text-primary-foreground font-semibold text-lg px-8">
-              Get Started Free
+            <Button onClick={() => navigate('/dashboard')} size="lg" className="gradient-primary text-primary-foreground font-semibold text-lg px-8">
+              Get Started
             </Button>
           </div>
 
