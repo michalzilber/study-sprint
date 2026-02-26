@@ -10,23 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
           script: |
             cd /home/ubuntu/study-sprint
-            git pull
-            npm install
-            npm run build
-            sudo rm -rf /var/www/html/*
-            sudo cp -r dist/* /var/www/html/
+            git pull origin main
 
+            # Backend
             cd backend
             npm install
             sudo systemctl restart node-service
+
+            # Frontend
+            cd ..
+            npm install
+            npm run build
+            sudo cp -r dist/* /var/www/html/
