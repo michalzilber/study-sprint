@@ -7,7 +7,7 @@ interface Task {
   title: string;
   description: string;
   due_date: string | null;
-  priority: 'LOW' | 'MEDIUM' | 'HIGH';
+  priority: 'LOWER' | 'MEDIUM' | 'HIGH';
   completed: boolean;
   focus_sessions: number;
 }
