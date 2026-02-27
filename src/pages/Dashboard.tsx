@@ -49,7 +49,7 @@ const Dashboard = () => {
         {/* Progress */}
         <div className="glass rounded-xl p-6 mb-8">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="text-lg font-semibold text-foreground">Your Progress</h2>
+            <h2 className="text-lg font-semibold text-foreground">Your Progress!</h2>
             <span className="text-2xl font-bold text-primary font-mono">{completionPercent}%</span>
           </div>
           <Progress value={completionPercent} className="h-2" />
