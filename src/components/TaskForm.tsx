@@ -55,7 +55,7 @@ const TaskForm = ({ onSubmit, onCancel, initial }: TaskFormProps) => {
               <SelectContent>
                 <SelectItem value="LOW">Low</SelectItem>
                 <SelectItem value="MEDIUM">Medium</SelectItem>
-                <SelectItem value="HIGH">High</SelectItem>
+                <SelectItem value="HIGH">High!</SelectItem>
               </SelectContent>
             </Select>
           </div>
